@@ -1,0 +1,107 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+            title is provided by inheriting templates
+        {% endblock %}
+    </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--[if IE]><script
+      src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+    </script><![endif]-->
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'readersclub/normalize.css' %}">
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'readersclub/skeleton.css' %}">
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'readersclub/style.css' %}">
+    {% block head %}{% endblock %}
+</head>
+
+<body>
+
+<div class="container">
+    <header class="row">
+        <div class="offset-by-one ten columns">
+            <h1 class="logo">Readers' Club</h1>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li>
+                <a href="{% url 'readersclub_book_list_urlpattern' %}">
+                    Books</a></li>
+            <li>
+                <a href="{% url 'readersclub_author_list_urlpattern' %}">
+                    Authors</a></li>
+        </ul>
+    </nav>
+    <main>
+        {% block content %}
+            <div class="row">
+                <section class="eight columns">
+                    {% block org_content %}
+                        This is default content!
+                    {% endblock %}
+                </section>
+                <section class="desktop four columns">
+                    {% block create_button %}{% endblock %}
+                </section>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
+                    {% block content_footer %}{% endblock %}
+                </div>
+            </div>
+        {% endblock %}
+    </main>
+    {% if is_paginated %}
+        <div class="row">
+            <div class="twelve columns">
+                <ul class="pagination">
+                    {% if first_page_url %}
+                        <li>
+                            <a href="{{ first_page_url }}">
+                                First</a>
+                        </li>
+                    {% endif %}
+                    {% if previous_page_url %}
+                        <li>
+                            <a href="{{ previous_page_url }}">
+                                Previous</a>
+                        </li>
+                    {% endif %}
+                    <li>
+                        Page {{ page_obj.number }}
+                        of {{ paginator.num_pages }}
+                    </li>
+                    {% if next_page_url %}
+                        <li>
+                            <a href="{{ next_page_url }}">
+                                Next</a>
+                        </li>
+                    {% endif %}
+                    {% if last_page_url %}
+                        <li>
+                            <a href="{{ last_page_url }}">
+                                Last</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    {% endif %}
+</div><!-- container -->
+
+<footer>
+
+</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+{% extends 'readersclub/base.html' %}
+{% block title %}
+    Author - {{ author }}
+{% endblock %}
+
+{% block content %}
+    <h2> {{ author }} </h2>
+{#    <ul>#}
+{#        <a href="{{ book.get_update_url }}"#}
+{#           class="button">Edit Student</a><br>#}
+{##}
+{#        <a href="{{ book.get_delete_url }}"#}
+{#           class="button">Delete Student</a>#}
+{##}
+{#    </ul>#}
+
+    <section>
+        <table>
+            <tr>
+                <th>First Name:</th>
+                <td>{{ author.first_name }}</td>
+            </tr>
+            <tr>
+                <th>Last Name:</th>
+                <td>{{ author.last_name }}</td>
+            </tr>
+            <tr>
+                <th>Pseudonym:</th>
+                <td>{{ author.pseudonym }}</td>
+            </tr>
+            <tr>
+                <th>Introduction:</th>
+                <td>{{ author.introduction }}</td>
+            </tr>
+            <tr>
+                <th>Awards:</th>
+                <td>{{ author.awards }}</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h3>Works:</h3>
+        <ul>
+            {% for work in works %}
+            <li>
+                <a href="{{ work.get_absolute_url }}">{{ work.title }}</a>
+            </li>
+            {% empty %}
+                <li><em>There are currently no work for this author.</em></li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}
