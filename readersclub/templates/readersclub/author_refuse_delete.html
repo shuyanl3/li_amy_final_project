@@ -1,0 +1,26 @@
+{% extends 'readersclub/base.html' %}
+
+{% block title %}
+   Error Deleting Author
+{% endblock %}
+
+{% block content %}
+    <div>
+        <h2>Error Deleting Book</h2>
+        <p>
+            You may not delete author {{ author }}. This
+            author is currently linked with books:
+        </p>
+            <ul>
+                {% for work in works %}
+                <li>
+                    <a href="{{ work.get_absolute_url }}">{{ work }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        <p>
+            Return to <a href="{% url 'readersclub_author_list_urlpattern' %}">Author List</a>
+        </p>
+    </div>
+{% endblock %}
+

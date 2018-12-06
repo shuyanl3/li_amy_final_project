@@ -5,14 +5,18 @@
 
 {% block content %}
     <h2> {{ author }} </h2>
-{#    <ul>#}
-{#        <a href="{{ book.get_update_url }}"#}
-{#           class="button">Edit Student</a><br>#}
-{##}
-{#        <a href="{{ book.get_delete_url }}"#}
-{#           class="button">Delete Student</a>#}
-{##}
-{#    </ul>#}
+    <ul>
+        {% if perms.readersclub.change_author %}
+        <a href="{{ author.get_update_url }}"
+           class="button">Edit Authot</a><br>
+        {% endif %}
+
+        {% if perms.readersclub.delete_author %}
+        <a href="{{ author.get_delete_url }}"
+           class="button">Delete Author</a>
+        {% endif %}
+
+    </ul>
 
     <section>
         <table>

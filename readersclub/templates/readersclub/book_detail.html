@@ -5,14 +5,17 @@
 
 {% block content %}
     <h2> {{ book }} </h2>
-{#    <ul>#}
-{#        <a href="{{ book.get_update_url }}"#}
-{#           class="button">Edit Student</a><br>#}
-{##}
-{#        <a href="{{ book.get_delete_url }}"#}
-{#           class="button">Delete Student</a>#}
-{##}
-{#    </ul>#}
+    <ul>
+        {% if perms.readersclub.change_book %}
+        <a href="{{ book.get_update_url }}"
+           class="button">Edit Book</a><br>
+        {% endif %}
+
+        {% if perms.readersclub.delete_book %}
+        <a href="{{ book.get_delete_url }}"
+           class="button">Delete Book</a>
+        {% endif %}
+    </ul>
 
     <section>
         <table>
@@ -45,6 +48,12 @@
 
     <section>
         <h3>Reviews</h3>
+        {% if perms.readersclub.add_review %}
+        <div>
+            <a href="{% url 'readersclub_review_create_urlpattern' pk=book.pk %}"
+            class="button button-primary">Write Review</a>
+        </div>
+        {% endif %}
         <ul>
             {% for review in review_list %}
             <li>

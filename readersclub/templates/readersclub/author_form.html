@@ -1,0 +1,15 @@
+{% extends 'readersclub/base.html' %}
+
+{% block title %}
+   Create Author
+{% endblock %}
+
+{% block content %}
+    <form
+        action="{% url 'readersclub_author_create_urlpattern' %}"
+        method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Create Author</button>
+    </form>
+{% endblock %}

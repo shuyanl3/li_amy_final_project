@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+from django.urls import reverse_lazy
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -121,6 +123,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-AUTH_USER_MODEL = 'readersclub.CustomUser'
 # LOGIN_REDIRECT_URL = 'home'
 # LOGOUT_REDIRECT_URL = 'home'
+
+LOGOUT_REDIRECT_URL = 'login_urlpattern'
+LOGIN_REDIRECT_URL = 'readersclub_book_list_urlpattern'
+
+LOGIN_URL = reverse_lazy('login_urlpattern')

@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import User
 from django.conf import settings
 from django.utils import timezone
 from django.urls import reverse
@@ -21,6 +21,16 @@ class Author(models.Model):
                        kwargs={'pk': self.pk}
                        )
 
+    def get_update_url(self):
+        return reverse('readersclub_author_update_urlpattern',
+                       kwargs={'pk': self.pk}
+                       )
+
+    def get_delete_url(self):
+        return reverse('readersclub_author_delete_urlpattern',
+                       kwargs={'pk': self.pk}
+                       )
+
 
 class Book(models.Model):
     book_id = models.AutoField(primary_key=True)
@@ -39,22 +49,25 @@ class Book(models.Model):
                        kwargs={'pk': self.pk}
                        )
 
+    def get_update_url(self):
+        return reverse('readersclub_book_update_urlpattern',
+                       kwargs={'pk': self.pk}
+                       )
+
+    def get_delete_url(self):
+        return reverse('readersclub_book_delete_urlpattern',
+                       kwargs={'pk': self.pk}
+                       )
+
     class Meta:
         ordering = ['title']
 
 
-class CustomUser(AbstractUser):
-    nickname = models.CharField(max_length=200)
-
-    def __str__(self):
-        return self.email
-
-
 class Review(models.Model):
     review_id = models.AutoField(primary_key=True)
-    book = models.ForeignKey(Book, related_name='reviews', on_delete=models.PROTECT)
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='reviews', on_delete=models.PROTECT)
-    text = models.CharField(max_length=10000)
+    book = models.ForeignKey(Book, related_name='reviews', on_delete=models.CASCADE)
+    author = models.ForeignKey('auth.User', related_name='reviews', on_delete=models.CASCADE, blank=True)
+    text = models.CharField(max_length=2000)
     rate = models.FloatField()
 
     created_date = models.DateTimeField(
@@ -68,9 +81,7 @@ class Review(models.Model):
 
     def __str__(self):
         return '%s: %s' % (self.author, self.book)
-    
-    # class Meta:
-    #     unique_together = ['book', 'author']
+
 
 
 

@@ -1,0 +1,19 @@
+{% extends 'readersclub/base.html' %}
+{% block title %}
+    Review
+{% endblock %}
+
+{% block content %}
+    <section>
+        <table>
+            <tr>
+                <th>Author</th>
+                <td>{{ review.author }}</td>
+            </tr>
+            <tr>
+                <th>Text:</th>
+                <td>{{ review.text }}</td>
+            </tr>
+        </table>
+    </section>
+{% endblock %}

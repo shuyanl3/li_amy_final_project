@@ -4,6 +4,15 @@
     Author List
 {% endblock %}
 
+{% block create_button %}
+    {% if perms.readersclub.add_author %}
+    <a
+        href="{% url 'readersclub_author_create_urlpattern'  %}"
+        class="button button-primary">
+      Add New Author</a>
+    {% endif %}
+{% endblock %}
+
 {% block content %}
     <h2>Author List</h2>
     <ul>
