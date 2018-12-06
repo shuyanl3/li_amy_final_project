@@ -57,12 +57,48 @@
         <ul>
             {% for review in review_list %}
             <li>
-                <p>{{ review.author }}: </p>
-                <p>{{ review.text }}</p>
+                {{ review.author }}:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ review.text }}
             </li>
             {% empty %}
                 <li><em>There are currently no review for this book.</em></li>
             {% endfor %}
         </ul>
     </section>
+    {% if is_paginated %}
+        <div class="row">
+            <div class="twelve columns">
+                <ul class="pagination">
+                    {% if first_page_url %}
+                        <li>
+                            <a href="{{ first_page_url }}">
+                                First</a>
+                        </li>
+                    {% endif %}
+                    {% if previous_page_url %}
+                        <li>
+                            <a href="{{ previous_page_url }}">
+                                Previous</a>
+                        </li>
+                    {% endif %}
+                    <li>
+                        Page {{ review_list.number }}
+                        of {{ paginator.num_pages }}
+                    </li>
+                    {% if next_page_url %}
+                        <li>
+                            <a href="{{ next_page_url }}">
+                                Next</a>
+                        </li>
+                    {% endif %}
+                    {% if last_page_url %}
+                        <li>
+                            <a href="{{ last_page_url }}">
+                                Last</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}

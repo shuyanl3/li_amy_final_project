@@ -1,7 +1,8 @@
 from django.urls import path
 from django.conf.urls import include, url
-from readersclub.views import AuthorDetail, AuthorList, BookList, BookDetail, ReviewCreate, BookCreate, BookUpdate, \
+from readersclub.views import AuthorDetail, AuthorList, BookList, BookDetail, BookCreate, BookUpdate, \
     BookDelete, AuthorCreate, AuthorUpdate, AuthorDelete
+from . import views
 
 urlpatterns = [
     path('book/',
@@ -25,7 +26,7 @@ urlpatterns = [
          name='readersclub_book_delete_urlpattern'),
 
     path('book/<int:pk>/addreview/',
-         ReviewCreate.as_view(),
+         views.add_review_to_book,
          name='readersclub_review_create_urlpattern'),
 
     path('author/',
@@ -45,9 +46,7 @@ urlpatterns = [
          AuthorUpdate.as_view(),
          name='readersclub_author_update_urlpattern'),
 
-    path('instructor/<int:pk>/delete/',
+    path('author/<int:pk>/delete/',
          AuthorDelete.as_view(),
          name='readersclub_author_delete_urlpattern'),
-
-
     ]

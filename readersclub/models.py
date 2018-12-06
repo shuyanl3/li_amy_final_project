@@ -1,3 +1,4 @@
+from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 from django.contrib.auth.models import User
 from django.conf import settings
@@ -37,7 +38,7 @@ class Book(models.Model):
     title = models.CharField(max_length=500)
     author = models.ForeignKey(Author, related_name='books', on_delete=models.PROTECT)
     introduction = models.CharField(max_length=10000)
-    rate = models.FloatField()
+    rate = models.FloatField(validators=[MinValueValidator(0.0), MaxValueValidator(10)])
     publisher = models.CharField(max_length=300)
     genre = models.CharField(max_length=200)
 
@@ -68,7 +69,7 @@ class Review(models.Model):
     book = models.ForeignKey(Book, related_name='reviews', on_delete=models.CASCADE)
     author = models.ForeignKey('auth.User', related_name='reviews', on_delete=models.CASCADE, blank=True)
     text = models.CharField(max_length=2000)
-    rate = models.FloatField()
+    rate = models.FloatField(validators=[MinValueValidator(0.0), MaxValueValidator(10)])
 
     created_date = models.DateTimeField(
         default=timezone.now)

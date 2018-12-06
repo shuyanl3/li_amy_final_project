@@ -13,7 +13,7 @@ from .forms import ReviewForm, BookForm, AuthorForm
 
 
 class BookList(PageLinksMixin, ListView):
-    paginate_by = 25
+    paginate_by = 1
     model = Book
 
 
@@ -122,19 +122,34 @@ class BookDelete(LoginRequiredMixin, PermissionRequiredMixin, View):
         return redirect('readersclub_book_list_urlpattern')
 
 
-class ReviewCreate(CreateView):
-    permission_required = 'readersclub.add_review'
-    form_class = ReviewForm
-    model = Review
-    template_name = 'readersclub/review_form.html'
+def add_review_to_book(request, pk):
+    book = get_object_or_404(Book, pk=pk)
+    if request.method == "POST":
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.book = book
+            review.author = request.user
+            review.save()
+            return redirect('readersclub_book_detail_urlpattern', pk=book.pk)
+    else:
+        form = ReviewForm()
+    return render(request, 'readersclub/review_form.html', {'form': form})
 
-    def form_valid(self, form):
-        form.instance.author = self.request.user
-        form.instance.book_id = self.kwargs.get['pk']
-        return super(ReviewCreate, self).form_valid(form)
 
-    def get_success_url(self):
-        return redirect(reverse('readersclub_book_detail_urlpattern', kwargs={'pk': self.kwargs.get['pk']}))
+# class ReviewCreate(CreateView):
+#     permission_required = 'readersclub.add_review'
+#     form_class = ReviewForm
+#     model = Review
+#     template_name = 'readersclub/review_form.html'
+#
+#     def form_valid(self, form):
+#         form.instance.author = self.request.user
+#         form.instance.book_id = self.kwargs.get['pk']
+#         return super(ReviewCreate, self).form_valid(form)
+#
+#     def get_success_url(self):
+#         return redirect(reverse('readersclub_book_detail_urlpattern', kwargs={'pk': self.kwargs.get['pk']}))
 
 
 class AuthorList(PageLinksMixin, ListView):
@@ -248,13 +263,13 @@ class AuthorDelete(LoginRequiredMixin, PermissionRequiredMixin, View):
 
     def get_object(self, pk):
         return get_object_or_404(
-            Book,
+            Author,
             pk=pk
         )
 
     def post(self, request, pk):
-        book = self.get_object(pk)
-        book.delete()
+        author = self.get_object(pk)
+        author.delete()
         return redirect('readersclub_author_list_urlpattern')
 
 
