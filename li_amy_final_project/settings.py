@@ -122,6 +122,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "/static")
 
 # LOGIN_REDIRECT_URL = 'home'
 # LOGOUT_REDIRECT_URL = 'home'
@@ -130,3 +131,4 @@ LOGOUT_REDIRECT_URL = 'login_urlpattern'
 LOGIN_REDIRECT_URL = 'readersclub_book_list_urlpattern'
 
 LOGIN_URL = reverse_lazy('login_urlpattern')
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True

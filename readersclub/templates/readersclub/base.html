@@ -1,6 +1,6 @@
-{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
+{% load staticfiles %}
 
 <head>
     <meta charset="UTF-8">
@@ -20,33 +20,62 @@
           href="{% static 'readersclub/skeleton.css' %}">
     <link rel="stylesheet" type="text/css"
           href="{% static 'readersclub/style.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Acme|Mountains+of+Christmas:700|Questrial" rel="stylesheet">
     {% block head %}{% endblock %}
 </head>
 
 <body>
 
-<div class="container">
-    <div class="status row">
-        <div class="offset-by-eight four columns">
-            <ul class="inline">
-                {% if user.is_authenticated %}
-                    <li><a href="{% url 'logout_urlpattern' %}">
+    <div class="container">
+        <div class="status row">
+            <div class="offset-by-ten four columns">
+                <ul class="inline">
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'logout_urlpattern' %}" class="button button">
                         Log Out, {{ user.get_username }}</a></li>
-                {% else %}
-                    <li><a href="{% url 'login_urlpattern' %}">
+                    {% else %}
+                        <li><a href="{% url 'login_urlpattern' %}" class="button button">
                         Log In</a></li>
-                {% endif %}
-            </ul>
+                    {% endif %}
+                </ul>
+            </div>
         </div>
     </div>
-</div>
+
+    <div class="container">
+        <header class="row">
+            <div class="offset-by-one ten columns">
+                <h1 class="logo">Readers' Club</h1>
+            </div>
+        </header>
+    </div>
+
+    <div class="row">
+        <img src="{% static 'readersclub/book-bindings-bookcase-books-694740.jpg' %}" style="width: 1265px; height: 350px">
+    </div>
+
+{#<div class="container">#}
+{#    <div class="status row">#}
+{#        <div class="offset-by-eight four columns">#}
+{#            <ul class="inline">#}
+{#                {% if user.is_authenticated %}#}
+{#                    <li><a href="{% url 'logout_urlpattern' %}">#}
+{#                        Log Out, {{ user.get_username }}</a></li>#}
+{#                {% else %}#}
+{#                    <li><a href="{% url 'login_urlpattern' %}">#}
+{#                        Log In</a></li>#}
+{#                {% endif %}#}
+{#            </ul>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
 
 <div class="container">
-    <header class="row">
-        <div class="offset-by-one ten columns">
-            <h1 class="logo">Readers' Club</h1>
-        </div>
-    </header>
+{#    <header class="row">#}
+{#        <div class="offset-by-one ten columns">#}
+{#            <h1 class="logo">Readers' Club</h1>#}
+{#        </div>#}
+{#    </header>#}
     <nav>
         <ul>
             <li>
@@ -55,6 +84,9 @@
             <li>
                 <a href="{% url 'readersclub_author_list_urlpattern' %}">
                     Authors</a></li>
+            <li>
+                <a href="{% url 'about_urlpattern' %}">
+                    About</a></li>
         </ul>
     </nav>
     <main>
@@ -84,5 +116,14 @@
 </footer>
 
 </body>
+
+{% block scripts %}
+    <script type="text/javascript">
+        function refreshpage() {
+            document.location.reload(true)
+        }
+    </script>
+    
+{% endblock %}
 
 </html>

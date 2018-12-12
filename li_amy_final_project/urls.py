@@ -38,4 +38,9 @@ urlpatterns = [
          name='logout_urlpattern'
          ),
 
+    path('about/', TemplateView.as_view(
+            template_name='readersclub/about.html'
+         ),
+         name='about_urlpattern'),
+
 ]

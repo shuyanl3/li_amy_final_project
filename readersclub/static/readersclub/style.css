@@ -42,15 +42,19 @@ body>div>header {
 header h1 {
 	display: inline-block;
 	font-weight: normal;
-	font-style: normal;
+	font-family: 'Mountains of Christmas', cursive;
 	width: 100%;
 	margin-top: 0;
 	padding-top: 0;
 }
 
+h2 {
+	font-family: 'Acme', sans-serif;
+}
+
 .logo {
 	padding-top: 50px;
-	background-image: url("/static/courseinfo/logo.png");
+	background-image: url("../../static/readersclub/logo1.png");
 	background-size: 50px;
 	background-repeat: no-repeat;
 	background-position: top;
@@ -104,7 +108,8 @@ nav ul li {
 @media (min-width: 400px) {
 	nav ul li {
 		letter-spacing: .15rem;
-		font-size: 1.2rem;
+		font-size: 1.5rem;
+		font-family: 'Acme', sans-serif;
 		margin: 0 0.5em;
 	}
 }

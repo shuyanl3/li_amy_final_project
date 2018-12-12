@@ -1,5 +1,6 @@
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.db.models import Q
 from django.shortcuts import render, get_object_or_404, render_to_response, redirect
 from django.http.response import HttpResponse
 from django.template import loader
@@ -13,8 +14,28 @@ from .forms import ReviewForm, BookForm, AuthorForm
 
 
 class BookList(PageLinksMixin, ListView):
-    paginate_by = 1
+    template_name = 'readersclub/book_list.html'
+    paginate_by = 20
     model = Book
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        if query:
+            return Book.objects.filter(Q(title__icontains=query))
+        else:
+            return Book.objects.all()
+
+
+# def search_book(request):
+#     template_name = 'readersclub/book_list.html'
+#     query = request.GET['q']
+#     if query:
+#         results = Book.objects.filter(Q(title__icontains=query))
+#     else:
+#         results = Book.objects.all()
+#     context = {'results': results}
+#
+#     return render(request, template_name, context)
 
 
 class BookDetail(View):
@@ -155,6 +176,15 @@ def add_review_to_book(request, pk):
 class AuthorList(PageLinksMixin, ListView):
     paginate_by = 25
     model = Author
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        if query:
+            return Author.objects.filter(Q(first_name__icontains=query) |
+                                         Q(last_name__icontains=query) |
+                                         Q(pseudonym__icontains=query))
+        else:
+            return Author.objects.all()
 
 
 class AuthorDetail(View):

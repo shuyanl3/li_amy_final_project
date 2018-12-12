@@ -49,4 +49,5 @@ urlpatterns = [
     path('author/<int:pk>/delete/',
          AuthorDelete.as_view(),
          name='readersclub_author_delete_urlpattern'),
+
     ]

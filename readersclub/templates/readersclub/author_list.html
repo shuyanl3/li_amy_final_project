@@ -6,6 +6,13 @@
 
 
 {% block content %}
+    <div class="center">
+        <form method="get" action="{% url 'readersclub_author_list_urlpattern' %}">
+            <input name="q" placeholder="What are your looking for?" style="height: 35px; width: 200px">
+            <button type="submit">SEARCH</button>
+        </form>
+    </div>
+
     {% if perms.readersclub.add_author %}
     <a
         href="{% url 'readersclub_author_create_urlpattern'  %}"
@@ -13,11 +20,14 @@
       Add New Author</a>
     {% endif %}
 
-    <h2>Author List</h2>
+    <h2>Authors</h2>
     <ul>
         {% for author in author_list %}
             <li>
-                <a href="{{ author.get_absolute_url }}">{{ author }}</a>
+                <img src="../../static/readersclub/harry-potter-clipart-black-and-white-638462-2576998.jpg"
+                     style="height: 20px; width: 20px">
+                <a href="{{ author.get_absolute_url }}"style="font-size: x-large;
+                font-family: 'Questrial', sans-serif;">{{ author }}</a>
             </li>
         {% empty %}
             <li><em>There are currently no author available.</em></li>

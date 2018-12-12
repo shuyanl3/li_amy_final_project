@@ -6,6 +6,12 @@
 
 
 {% block content %}
+    <div class="center">
+        <form method="get" action="{% url 'readersclub_book_list_urlpattern' %}">
+            <input name="q" placeholder="What are your looking for?" style="height: 35px; width: 200px">
+            <button type="submit">SEARCH</button>
+        </form>
+    </div>
 
     <div>
         {% if perms.readersclub.add_book %}
@@ -16,11 +22,13 @@
     {% endif %}
     </div>
 
-    <h2>Book List</h2>
+    <h2>Books</h2>
     <ul>
         {% for book in book_list %}
             <li>
-                <a href="{{ book.get_absolute_url }}">{{ book }}</a>
+                <img src="../../static/readersclub/logo.png" style="height: 20px; width: 20px">
+                <a href="{{ book.get_absolute_url }}" style="font-size: x-large;
+                font-family: 'Questrial', sans-serif;">{{ book }}</a>
             </li>
         {% empty %}
             <li><em>There are currently no book available.</em></li>
