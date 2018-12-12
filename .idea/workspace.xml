@@ -2,25 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b71c066-63a2-4775-ae44-84d6725d840a" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/readersclub/static/readersclub/apple-coffee-couch-6666.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/readersclub/static/readersclub/book-2170910_1280.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/readersclub/static/readersclub/book-bindings-bookcase-books-694740.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/readersclub/static/readersclub/book-close-up-eyeglasses-1445415.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/readersclub/static/readersclub/harry-potter-clipart-black-and-white-638462-2576998.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/readersclub/static/readersclub/logo1.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/readersclub/templates/readersclub/about.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/readersclub/templates/readersclub/signup.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change beforePath="$PROJECT_DIR$/li_amy_final_project/settings.py" afterPath="$PROJECT_DIR$/li_amy_final_project/settings.py" />
       <change beforePath="$PROJECT_DIR$/li_amy_final_project/urls.py" afterPath="$PROJECT_DIR$/li_amy_final_project/urls.py" />
-      <change beforePath="$PROJECT_DIR$/readersclub/static/readersclub/blog.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/readersclub/static/readersclub/logo.png" afterPath="$PROJECT_DIR$/readersclub/static/readersclub/logo.png" />
-      <change beforePath="$PROJECT_DIR$/readersclub/static/readersclub/skeleton.css" afterPath="$PROJECT_DIR$/readersclub/static/readersclub/skeleton.css" />
-      <change beforePath="$PROJECT_DIR$/readersclub/static/readersclub/style.css" afterPath="$PROJECT_DIR$/readersclub/static/readersclub/style.css" />
-      <change beforePath="$PROJECT_DIR$/readersclub/templates/readersclub/author_list.html" afterPath="$PROJECT_DIR$/readersclub/templates/readersclub/author_list.html" />
       <change beforePath="$PROJECT_DIR$/readersclub/templates/readersclub/base.html" afterPath="$PROJECT_DIR$/readersclub/templates/readersclub/base.html" />
-      <change beforePath="$PROJECT_DIR$/readersclub/templates/readersclub/book_list.html" afterPath="$PROJECT_DIR$/readersclub/templates/readersclub/book_list.html" />
-      <change beforePath="$PROJECT_DIR$/readersclub/urls.py" afterPath="$PROJECT_DIR$/readersclub/urls.py" />
+      <change beforePath="$PROJECT_DIR$/readersclub/templates/readersclub/login.html" afterPath="$PROJECT_DIR$/readersclub/templates/readersclub/login.html" />
       <change beforePath="$PROJECT_DIR$/readersclub/views.py" afterPath="$PROJECT_DIR$/readersclub/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,23 +22,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="book_list.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/readersclub/templates/readersclub/book_list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="30" column="54" lean-forward="false" selection-start-line="29" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
-              <folding>
-                <element signature="n#style#0;n#img#0;n#li#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/readersclub/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
+            <state relative-caret-position="552">
               <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
@@ -63,32 +37,96 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/li_amy_final_project/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="41" column="38" lean-forward="false" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
-              <folding />
+            <state relative-caret-position="705">
+              <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+              <folding>
+                <element signature="e#644#676#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/readersclub/templates/readersclub/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+            <state relative-caret-position="451">
+              <caret line="35" column="30" lean-forward="true" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="author_list.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/readersclub/templates/readersclub/author_list.html">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/readersclub/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="29" column="54" lean-forward="false" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
+            <state relative-caret-position="3180">
+              <caret line="212" column="0" lean-forward="true" selection-start-line="212" selection-start-column="0" selection-end-line="212" selection-end-column="0" />
               <folding>
-                <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#li#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#!!top" expanded="true" />
+                <element signature="e#0#44#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="0002_create_groups.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/readersclub/migrations/0002_create_groups.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="660">
+              <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="signup.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/readersclub/templates/readersclub/signup.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="155">
+              <caret line="25" column="47" lean-forward="true" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+              <folding>
+                <element signature="n#style#0;n#small#0;n#p#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="e#404#409#0#HTML" expanded="true" />
+                <element signature="e#595#600#0#HTML" expanded="true" />
+                <element signature="e#681#686#0#HTML" expanded="true" />
+                <element signature="n#style#0;n#small#1;n#p#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/readersclub/templates/readersclub/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="77" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/readersclub/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="27">
+              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/readersclub/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="38" column="84" lean-forward="true" selection-start-line="38" selection-start-column="84" selection-end-line="38" selection-end-column="84" />
+              <folding>
+                <element signature="e#0#71#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -124,7 +162,6 @@
         <option value="$PROJECT_DIR$/readersclub/templates/readersclub/review_detail.html" />
         <option value="$PROJECT_DIR$/readersclub/templates/readersclub/book_form_create.html" />
         <option value="$PROJECT_DIR$/readersclub/templates/readersclub/book_form_update.html" />
-        <option value="$PROJECT_DIR$/readersclub/templates/readersclub/login.html" />
         <option value="$PROJECT_DIR$/readersclub/templates/readersclub/book_refuse_delete.html" />
         <option value="$PROJECT_DIR$/readersclub/templates/readersclub/book_confirm_delete.html" />
         <option value="$PROJECT_DIR$/readersclub/templates/readersclub/book_form.html" />
@@ -138,9 +175,7 @@
         <option value="$PROJECT_DIR$/readersclub/templates/readersclub/review_form.html" />
         <option value="$PROJECT_DIR$/readersclub/models.py" />
         <option value="$PROJECT_DIR$/readersclub/templates/readersclub/book_detail.html" />
-        <option value="$PROJECT_DIR$/readersclub/forms.py" />
         <option value="$PROJECT_DIR$/readersclub/templates/readersclub/author_detail.html" />
-        <option value="$PROJECT_DIR$/readersclub/views.py" />
         <option value="$PROJECT_DIR$/li_amy_final_project/settings.py" />
         <option value="$PROJECT_DIR$/readersclub/static/readersclub/style.css" />
         <option value="$PROJECT_DIR$/readersclub/static/readersclub/skeleton.css" />
@@ -148,8 +183,12 @@
         <option value="$PROJECT_DIR$/readersclub/templates/readersclub/author_list.html" />
         <option value="$PROJECT_DIR$/readersclub/templates/readersclub/about.html" />
         <option value="$PROJECT_DIR$/readersclub/urls.py" />
+        <option value="$PROJECT_DIR$/readersclub/forms.py" />
         <option value="$PROJECT_DIR$/li_amy_final_project/urls.py" />
+        <option value="$PROJECT_DIR$/readersclub/templates/readersclub/login.html" />
+        <option value="$PROJECT_DIR$/readersclub/templates/readersclub/signup.html" />
         <option value="$PROJECT_DIR$/readersclub/templates/readersclub/base.html" />
+        <option value="$PROJECT_DIR$/readersclub/views.py" />
       </list>
     </option>
   </component>
@@ -197,6 +236,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -213,6 +253,12 @@
               <item name="li_amy_final_project" type="b2602c69:ProjectViewProjectNode" />
               <item name="li_amy_final_project" type="462c0819:PsiDirectoryNode" />
               <item name="readersclub" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="li_amy_final_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="li_amy_final_project" type="462c0819:PsiDirectoryNode" />
+              <item name="readersclub" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="li_amy_final_project" type="b2602c69:ProjectViewProjectNode" />
@@ -244,7 +290,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -344,7 +389,14 @@
       <option name="project" value="LOCAL" />
       <updated>1544081801988</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="change stylesheet; add search function; add about page">
+      <created>1544573121906</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1544573121906</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -354,17 +406,17 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="manage.py@li_amy_final_project" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32991204" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991204" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27943367" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28315946" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -384,7 +436,8 @@
     <MESSAGE value="First commit" />
     <MESSAGE value="Revise" />
     <MESSAGE value="debug and add pagination" />
-    <option name="LAST_COMMIT_MESSAGE" value="debug and add pagination" />
+    <MESSAGE value="change stylesheet; add search function; add about page" />
+    <option name="LAST_COMMIT_MESSAGE" value="change stylesheet; add search function; add about page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -393,13 +446,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/readersclub/templates/readersclub/book_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/readersclub/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -489,13 +535,6 @@
     <entry file="file://$PROJECT_DIR$/readersclub/migrations/0004_auto_20181127_0603.py" />
     <entry file="file://$PROJECT_DIR$/readersclub/migrations/0003_auto_20181127_0559.py" />
     <entry file="file://$PROJECT_DIR$/readersclub/templates/readersclub/book_form_create.html" />
-    <entry file="file://$PROJECT_DIR$/readersclub/templates/readersclub/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="23" lean-forward="false" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/readersclub/templates/readersclub/author_form_update.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -540,13 +579,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/readersclub/migrations/0005_create_groups.py" />
     <entry file="file://$PROJECT_DIR$/readersclub/migrations/0006_auto_20181204_0230.py" />
-    <entry file="file://$PROJECT_DIR$/readersclub/migrations/0002_create_groups.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/readersclub/migrations/0003_create_group_permissions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-91">
@@ -603,13 +635,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/readersclub/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="41" column="31" lean-forward="true" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/readersclub/templates/readersclub/author_detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -618,39 +643,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/readersclub/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="84" lean-forward="true" selection-start-line="38" selection-start-column="84" selection-end-line="38" selection-end-column="84" />
-          <folding>
-            <element signature="e#0#71#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readersclub/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2655">
-          <caret line="177" column="18" lean-forward="false" selection-start-line="177" selection-start-column="18" selection-end-line="177" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#82#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readersclub/static/readersclub/blog.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-430">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readersclub/static/readersclub/logo.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/readersclub/static/readersclub/blog.css" />
     <entry file="file://$PROJECT_DIR$/readersclub/static/readersclub/logo.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -668,7 +661,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2998">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -690,7 +682,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/readersclub/templates/readersclub/book_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
+        <state relative-caret-position="450">
           <caret line="30" column="54" lean-forward="false" selection-start-line="29" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
           <folding>
             <element signature="n#style#0;n#img#0;n#li#0;n#ul#0;n#!!top" expanded="true" />
@@ -701,7 +693,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/readersclub/templates/readersclub/author_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
+        <state relative-caret-position="435">
           <caret line="29" column="54" lean-forward="false" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
           <folding>
             <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#!!top" expanded="true" />
@@ -719,9 +711,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/readersclub/static/readersclub/logo.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readersclub/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="84" lean-forward="true" selection-start-line="38" selection-start-column="84" selection-end-line="38" selection-end-column="84" />
+          <folding>
+            <element signature="e#0#71#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readersclub/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readersclub/migrations/0002_create_groups.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/readersclub/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
+        <state relative-caret-position="552">
           <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
@@ -731,17 +756,55 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/li_amy_final_project/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="41" column="38" lean-forward="false" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
+        <state relative-caret-position="705">
+          <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding>
+            <element signature="e#644#676#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readersclub/templates/readersclub/signup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="25" column="47" lean-forward="true" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+          <folding>
+            <element signature="n#style#0;n#small#0;n#p#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="e#404#409#0#HTML" expanded="true" />
+            <element signature="e#595#600#0#HTML" expanded="true" />
+            <element signature="e#681#686#0#HTML" expanded="true" />
+            <element signature="n#style#0;n#small#1;n#p#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readersclub/templates/readersclub/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="77" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/readersclub/templates/readersclub/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        <state relative-caret-position="451">
+          <caret line="35" column="30" lean-forward="true" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readersclub/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3180">
+          <caret line="212" column="0" lean-forward="true" selection-start-line="212" selection-start-column="0" selection-end-line="212" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

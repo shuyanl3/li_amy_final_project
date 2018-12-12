@@ -34,8 +34,10 @@
                         <li><a href="{% url 'logout_urlpattern' %}" class="button button">
                         Log Out, {{ user.get_username }}</a></li>
                     {% else %}
-                        <li><a href="{% url 'login_urlpattern' %}" class="button button">
+
+                        <li><a href="{% url 'login_urlpattern' %}" class="button button-primary">
                         Log In</a></li>
+                        <li><a href="{% url "signup_urlpattern" %}" class="button button">Sign up</a></li>
                     {% endif %}
                 </ul>
             </div>

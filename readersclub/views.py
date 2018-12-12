@@ -1,3 +1,6 @@
+from django.contrib.auth import authenticate
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import Group
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.db.models import Q
@@ -11,6 +14,22 @@ from .utils import PageLinksMixin
 
 from .models import Book, Author, Review
 from .forms import ReviewForm, BookForm, AuthorForm
+
+
+def UserSignup(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            group = Group.objects.get(name='rc_user')
+            user.groups.add(group)
+            return redirect('login_urlpattern')
+    else:
+        form = UserCreationForm()
+    return render(request, 'readersclub/signup.html', {'form': form})
 
 
 class BookList(PageLinksMixin, ListView):
@@ -40,7 +59,7 @@ class BookList(PageLinksMixin, ListView):
 
 class BookDetail(View):
     page_kwarg = 'page'
-    paginate_by = 1
+    paginate_by = 10
     template_name = 'readersclub/book_detail.html'
 
     def get(self, request, pk):

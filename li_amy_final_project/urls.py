@@ -18,6 +18,8 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path, include
 from django.views.generic import RedirectView, TemplateView
 
+from readersclub.views import UserSignup
+
 urlpatterns = [
     path('', include('readersclub.urls')),
 
@@ -36,6 +38,10 @@ urlpatterns = [
     path('logout/',
          LogoutView.as_view(),
          name='logout_urlpattern'
+         ),
+
+    path('signup/', UserSignup,
+         name='signup_urlpattern'
          ),
 
     path('about/', TemplateView.as_view(
