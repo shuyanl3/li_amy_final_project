@@ -13,6 +13,8 @@ class Author(models.Model):
     pseudonym = models.CharField(max_length=200)
     introduction = models.CharField(max_length=5000)
     awards = models.CharField(max_length=500)
+    picture_url = models.CharField(max_length=200,
+                                   default="../../static/readersclub/harry-potter-clipart-black-and-white-638462-2576998.jpg")
 
     def __str__(self):
         return '%s, %s (%s)' % (self.last_name, self.first_name, self.pseudonym)
@@ -41,6 +43,8 @@ class Book(models.Model):
     rate = models.FloatField(validators=[MinValueValidator(0.0), MaxValueValidator(10)])
     publisher = models.CharField(max_length=300)
     genre = models.CharField(max_length=200)
+    picture_url = models.CharField(max_length=200,
+                                   default="../../static/readersclub/logo.png")
 
     def __str__(self):
         return '%s' % self.title
@@ -76,12 +80,26 @@ class Review(models.Model):
     published_date = models.DateTimeField(
         blank=True, null=True)
 
+    def get_absolute_url(self):
+        return reverse('readersclub_review_detail_urlpattern',
+                       kwargs={'pk': self.pk}
+                       )
+
+    def get_delete_url(self):
+        return reverse('readersclub_review_delete_urlpattern',
+                       kwargs={'pk': self.pk}
+                       )
+
     def publish(self):
         self.published_date = timezone.now()
         self.save()
 
     def __str__(self):
         return '%s: %s' % (self.author, self.book)
+
+    class Meta:
+        ordering = ['review_id']
+
 
 
 

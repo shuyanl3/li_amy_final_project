@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block content %}
-    <h2> {{ book }} </h2>
+        <h2> {{ book }} </h2>
     <ul>
         {% if perms.readersclub.change_book %}
         <a href="{{ book.get_update_url }}"
@@ -15,10 +15,16 @@
         <a href="{{ book.get_delete_url }}"
            class="button">Delete Book</a>
         {% endif %}
+
     </ul>
 
     <section>
         <table>
+            <tr>
+                <td rowspan="7" style="vertical-align: top;">
+                        <img src="{{ book.picture_url }}" style="height: 150px; width: 150px">
+                </td>
+            </tr>
             <tr>
                 <th>Title:</th>
                 <td>{{ book.title }}</td>
@@ -54,10 +60,19 @@
             class="button button-primary">Write Review</a>
         </div>
         {% endif %}
+
+        {% if perms.readersclub.delete_book %}
+        <div>
+            <a href="{% url 'readersclub_review_list_urlpattern' pk=book.pk %}"
+            class="button button-primary">Manage Review</a>
+        </div>
+        {% endif %}
+
         <ul>
             {% for review in review_list %}
             <li>
                 {{ review.author }}:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rate: {{ review.rate }}<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ review.text }}
             </li>
             {% empty %}

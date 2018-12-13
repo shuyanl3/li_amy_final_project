@@ -33,8 +33,8 @@ def populate_permissions_lists(apps):
                                 review_permissions)
 
     rc_editor_permissions = chain(book_permissions,
-                                     author_permissions,
-                                     review_permissions)
+                                  author_permissions,
+                                  review_permissions)
 
     my_groups_initialization_list = [
         {

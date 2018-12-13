@@ -4,8 +4,30 @@
     Book List
 {% endblock %}
 
-
 {% block content %}
+
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        table, th, td {
+            border-bottom: 2px solid gainsboro;
+            border-top: 2px solid gainsboro;
+            vertical-align: middle;
+        }
+
+        a {text-decoration: none;}
+
+        a:hover {text-decoration: underline;}
+
+        tr:hover {
+          background-color: lightgrey;
+        }
+
+    </style>
+
     <div class="center">
         <form method="get" action="{% url 'readersclub_book_list_urlpattern' %}">
             <input name="q" placeholder="What are your looking for?" style="height: 35px; width: 200px">
@@ -23,17 +45,28 @@
     </div>
 
     <h2>Books</h2>
-    <ul>
+    <table>
         {% for book in book_list %}
-            <li>
-                <img src="../../static/readersclub/logo.png" style="height: 20px; width: 20px">
-                <a href="{{ book.get_absolute_url }}" style="font-size: x-large;
-                font-family: 'Questrial', sans-serif;">{{ book }}</a>
-            </li>
+
+            <tr>
+                <td style="text-align: center; vertical-align: middle; padding-top: 20px;">
+                    <a href="{{ book.get_absolute_url }}">
+                    <img src="{{ book.picture_url }}" style="height: 100px; width: 100px">
+                    </a>
+                </td>
+                <td style="vertical-align: middle;">
+                    <a href="{{ book.get_absolute_url }}" style="font-size: x-large; color: black;
+                    font-family: 'Questrial', sans-serif; padding-right: 30%; padding-bottom: 30px; padding-top: 30px;
+                    margin-left: 0">
+                        {{ book }}
+                    </a>
+                </td>
+            </tr>
+
         {% empty %}
             <li><em>There are currently no book available.</em></li>
         {% endfor %}
-    </ul>
+    </table>
     {% if is_paginated %}
         <div class="row">
             <div class="twelve columns">

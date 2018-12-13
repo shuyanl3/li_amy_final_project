@@ -9,7 +9,7 @@ from django.http.response import HttpResponse
 from django.template import loader
 from django.urls import reverse_lazy, reverse
 from django.views import View
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
 from .utils import PageLinksMixin
 
 from .models import Book, Author, Review
@@ -175,6 +175,37 @@ def add_review_to_book(request, pk):
     else:
         form = ReviewForm()
     return render(request, 'readersclub/review_form.html', {'form': form})
+
+
+class ReviewList(LoginRequiredMixin, PermissionRequiredMixin, PageLinksMixin, ListView):
+    permission_required = 'readersclub.delete_book'
+    template_name = 'readersclub/review_list.html'
+    model = Review
+
+    def get_queryset(self):
+        query = self.kwargs['pk']
+        if query is None:
+            return None
+        query2 = self.request.GET.get('q')
+        reviews = Review.objects.filter(book=query).order_by('-published_date')
+        if query2:
+            try:
+                float(query2)
+            except ValueError:
+                return reviews.filter(Q(author__username__icontains=query2) |
+                                      Q(text__icontains=query2)).order_by('-published_date')
+            return reviews.filter(rate__range=(float(query2) - 0.05, float(query2) + 0.05)).order_by('-published_date')
+        else:
+            return reviews.order_by('-published_date')
+
+
+class ReviewDelete(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
+    permission_required = 'readersclub.delete_book'
+    model = Review
+
+    def get_success_url(self):
+        review_list = self.kwargs['pk']
+        return reverse_lazy('readersclub_review_list_urlpattern', kwargs={'pk': review_list})
 
 
 # class ReviewCreate(CreateView):

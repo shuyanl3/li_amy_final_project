@@ -1,7 +1,7 @@
 from django.urls import path
 from django.conf.urls import include, url
 from readersclub.views import AuthorDetail, AuthorList, BookList, BookDetail, BookCreate, BookUpdate, \
-    BookDelete, AuthorCreate, AuthorUpdate, AuthorDelete
+    BookDelete, AuthorCreate, AuthorUpdate, AuthorDelete, ReviewList, ReviewDelete
 from . import views
 
 urlpatterns = [
@@ -28,6 +28,14 @@ urlpatterns = [
     path('book/<int:pk>/addreview/',
          views.add_review_to_book,
          name='readersclub_review_create_urlpattern'),
+
+    path('book/<int:pk>/review/',
+         ReviewList.as_view(),
+         name='readersclub_review_list_urlpattern'),
+
+    path('book/<int:pk>/review/delete/',
+         ReviewDelete.as_view(),
+         name='readersclub_review_delete_urlpattern'),
 
     path('author/',
          AuthorList.as_view(),

@@ -1,0 +1,20 @@
+{% extends 'readersclub/base.html' %}
+
+{% block title %}
+   Delete Review
+{% endblock %}
+
+{% block content %}
+    <form
+        action="{{ review.get_delete_url }}"
+        method="post">
+        {% csrf_token %}
+        <p>
+            Are you sure that you want to delete
+            review?
+        </p>
+        <button type="submit" class="button button-primary">Delete Book</button>
+        <a href="{%  url 'readersclub_review_list_urlpattern' pk=review.book.book_id%}" class="button">Cancel</a>
+    </form>
+{% endblock %}
+

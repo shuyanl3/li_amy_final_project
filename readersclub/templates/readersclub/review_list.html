@@ -1,9 +1,8 @@
 {% extends 'readersclub/base.html' %}
 
 {% block title %}
-    Author List
+    Review List
 {% endblock %}
-
 
 {% block content %}
 
@@ -18,50 +17,37 @@
             border-top: 2px solid gainsboro;
             vertical-align: middle;
         }
-
-        a {
-            text-decoration: none;
-        }
-
-        a:hover {text-decoration: underline;}
-
-        tr:hover {
-          background-color: lightgrey;
-        }
-
     </style>
 
     <div class="center">
-        <form method="get" action="{% url 'readersclub_author_list_urlpattern' %}">
+        <form method="get">
             <input name="q" placeholder="What are your looking for?" style="height: 35px; width: 200px">
             <button type="submit">SEARCH</button>
         </form>
     </div>
 
-    {% if perms.readersclub.add_author %}
-    <a
-        href="{% url 'readersclub_author_create_urlpattern'  %}"
-        class="button button-primary">
-      Add New Author</a>
-    {% endif %}
-
-    <h2>Authors</h2>
+    <h2>Reviews</h2>
     <table>
-        {% for author in author_list %}
+        <tr>
+            <th></th>
+            <th>Author:</th>
+            <th>Text:</th>
+            <th>Rate:</th>
+        </tr>
+        {% for review in review_list %}
             <tr>
-                <td style="text-align: center">
-                    <img src="../../static/readersclub/harry-potter-clipart-black-and-white-638462-2576998.jpg"
-                     style="height: 50px; width: 50px">
-                </td>
                 <td>
-                    <a href="{{ author.get_absolute_url }}"style="font-size: x-large; color: black;
-                    font-family: 'Questrial', sans-serif; padding-right: 20%; padding-bottom: 20px; padding-top: 20px">
-                        {{ author }}
-                    </a>
-                </td>
+                    {% if perms.readersclub.delete_book %}
+                        <a href="{{ review.get_delete_url }}"
+                        class="button button-primary">Delete Review</a>
+                    {% endif %}
+                <td>{{ review.author }}</td>
+                <td>{{ review.text }}</td>
+                <td>{{ review.rate }}</td>
             </tr>
+
         {% empty %}
-            <li><em>There are currently no author available.</em></li>
+            <tr><em>There are currently no review available.</em></tr>
         {% endfor %}
     </table>
     {% if is_paginated %}
