@@ -33,6 +33,7 @@
             <th>Author:</th>
             <th>Text:</th>
             <th>Rate:</th>
+            <th>Vote:</th>
         </tr>
         {% for review in review_list %}
             <tr>
@@ -44,6 +45,7 @@
                 <td>{{ review.author }}</td>
                 <td>{{ review.text }}</td>
                 <td>{{ review.rate }}</td>
+                <td>{{ review.vote }}</td>
             </tr>
 
         {% empty %}

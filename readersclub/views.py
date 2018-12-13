@@ -8,6 +8,7 @@ from django.shortcuts import render, get_object_or_404, render_to_response, redi
 from django.http.response import HttpResponse
 from django.template import loader
 from django.urls import reverse_lazy, reverse
+from django.utils import timezone
 from django.views import View
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
 from .utils import PageLinksMixin
@@ -170,11 +171,20 @@ def add_review_to_book(request, pk):
             review = form.save(commit=False)
             review.book = book
             review.author = request.user
+            review.published_date = timezone.now()
             review.save()
             return redirect('readersclub_book_detail_urlpattern', pk=book.pk)
     else:
         form = ReviewForm()
     return render(request, 'readersclub/review_form.html', {'form': form})
+
+
+def vote(request, pk):
+    review = get_object_or_404(Review, pk=request.GET.get('rid'))
+    if request.GET.get('vote') == 'vote':
+        review.vote += 1
+        review.save()
+    return redirect('readersclub_book_detail_urlpattern', pk=pk)
 
 
 class ReviewList(LoginRequiredMixin, PermissionRequiredMixin, PageLinksMixin, ListView):

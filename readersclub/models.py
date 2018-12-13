@@ -10,14 +10,18 @@ class Author(models.Model):
     author_id = models.AutoField(primary_key=True)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=200)
-    pseudonym = models.CharField(max_length=200)
+    pseudonym = models.CharField(max_length=200, blank=True, default='')
     introduction = models.CharField(max_length=5000)
     awards = models.CharField(max_length=500)
     picture_url = models.CharField(max_length=200,
                                    default="../../static/readersclub/harry-potter-clipart-black-and-white-638462-2576998.jpg")
 
     def __str__(self):
-        return '%s, %s (%s)' % (self.last_name, self.first_name, self.pseudonym)
+        result = ''
+        if self.pseudonym == '':
+            return '%s, %s' % (self.last_name, self.first_name)
+        else:
+            return '%s, %s (%s)' % (self.last_name, self.first_name, self.pseudonym)
 
     def get_absolute_url(self):
         return reverse('readersclub_author_detail_urlpattern',
@@ -74,6 +78,7 @@ class Review(models.Model):
     author = models.ForeignKey('auth.User', related_name='reviews', on_delete=models.CASCADE, blank=True)
     text = models.CharField(max_length=2000)
     rate = models.FloatField(validators=[MinValueValidator(0.0), MaxValueValidator(10)])
+    vote = models.IntegerField(default=0)
 
     created_date = models.DateTimeField(
         default=timezone.now)

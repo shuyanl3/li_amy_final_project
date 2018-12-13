@@ -21,8 +21,8 @@
     <section>
         <table>
             <tr>
-                <td rowspan="7" style="vertical-align: top;">
-                        <img src="{{ book.picture_url }}" style="height: 150px; width: 150px">
+                <td rowspan="7" style="vertical-align: top; padding-right: 20px">
+                        <img src="{{ book.picture_url }}" style="height: 150px; width: 110px">
                 </td>
             </tr>
             <tr>
@@ -71,9 +71,29 @@
         <ul>
             {% for review in review_list %}
             <li>
-                {{ review.author }}:<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rate: {{ review.rate }}<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ review.text }}
+                <p style="font-size: larger; font-family: Menlo; display: inline;">
+                    <img src="../../static/readersclub/user.png" style="height: 50px; width: 50px; vertical-align: middle">
+                    {{ review.author }}:
+                </p>
+                <p style="font-size: small; color: grey">{{ review.published_date }}</p>
+                <p style="color: #710d0a; font-weight: bold">Rate: {{ review.rate }}</p>
+                {{ review.text }}
+                {% if perms.readersclub.add_review %}
+                <div id="result">
+                <form METHOD="get" action="{% url 'readers_club_review_vote' pk=book.pk %}#result">
+                    <input type="hidden" value="{{ review.review_id }}" name="rid">
+
+                    <button type="Submit" id="vote" value="vote" name="vote" onclick="changevote()"
+                            style=" margin-top: 10px; padding-bottom: 10px; padding-left: 5px;
+                            padding-right: 5px; border: none">
+                        <img src="../../static/readersclub/orange-thumb-like.png" style="height: 30px; width: 30px; margin: 0">
+                    </button>
+
+                    <p id="helpful" style="display: inline; padding-left: 10px; font-size: small">Helpful: {{ review.vote }}</p>
+                </form>
+                </div>
+                {% endif %}
+
             </li>
             {% empty %}
                 <li><em>There are currently no review for this book.</em></li>
@@ -117,3 +137,4 @@
         </div>
     {% endif %}
 {% endblock %}
+

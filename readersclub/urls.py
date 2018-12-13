@@ -37,6 +37,10 @@ urlpatterns = [
          ReviewDelete.as_view(),
          name='readersclub_review_delete_urlpattern'),
 
+    path('book/<int:pk>/vote',
+         views.vote,
+         name='readers_club_review_vote'),
+
     path('author/',
          AuthorList.as_view(),
          name='readersclub_author_list_urlpattern'),
