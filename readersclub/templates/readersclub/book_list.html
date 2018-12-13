@@ -56,10 +56,11 @@
                 </td>
                 <td style="vertical-align: middle;">
                     <a href="{{ book.get_absolute_url }}" style="font-size: x-large; color: black;
-                    font-family: 'Questrial', sans-serif; padding-right: 30%; padding-bottom: 30px; padding-top: 30px;
+                    font-family: 'Questrial', sans-serif;
                     margin-left: 0">
                         {{ book }}
                     </a>
+                    <p style="color: #555555">Author: {{ book.author }}<br>Rate: {{ book.rate }}</p>
                 </td>
             </tr>
 

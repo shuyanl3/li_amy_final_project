@@ -31,7 +31,7 @@
             </tr>
             <tr>
                 <th>Author:</th>
-                <td>{{ book.author }}</td>
+                <td><a href={{ book.author.get_absolute_url }}>{{ book.author }}</a></td>
             </tr>
             <tr>
                 <th>Introduction:</th>
