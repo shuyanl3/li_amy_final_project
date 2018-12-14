@@ -35,13 +35,14 @@ def UserSignup(request):
 
 class BookList(PageLinksMixin, ListView):
     template_name = 'readersclub/book_list.html'
-    paginate_by = 20
+    paginate_by = 6
     model = Book
 
     def get_queryset(self):
         query = self.request.GET.get('q')
         if query:
-            return Book.objects.filter(Q(title__icontains=query))
+            return Book.objects.filter(Q(title__icontains=query) | Q(introduction__icontains=query)
+                                       | Q(genre__icontains=query))
         else:
             return Book.objects.all()
 
@@ -60,7 +61,7 @@ class BookList(PageLinksMixin, ListView):
 
 class BookDetail(View):
     page_kwarg = 'page'
-    paginate_by = 10
+    paginate_by = 8
     template_name = 'readersclub/book_detail.html'
 
     def get(self, request, pk):
@@ -183,9 +184,7 @@ def vote(request, pk):
     review = get_object_or_404(Review, pk=request.GET.get('rid'))
     if request.GET.get('vote') == 'vote':
         review.vote += 1
-        request.user.first_name = 'voted'
         review.save()
-        request.user.save()
     return redirect('readersclub_book_detail_urlpattern', pk=pk)
 
 
@@ -237,7 +236,7 @@ class ReviewDelete(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
 
 
 class AuthorList(PageLinksMixin, ListView):
-    paginate_by = 25
+    paginate_by = 8
     model = Author
 
     def get_queryset(self):

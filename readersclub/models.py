@@ -12,7 +12,7 @@ class Author(models.Model):
     last_name = models.CharField(max_length=200)
     pseudonym = models.CharField(max_length=200, blank=True, default='')
     introduction = models.CharField(max_length=5000)
-    awards = models.CharField(max_length=500)
+    awards = models.CharField(max_length=500, blank=True, default='')
     picture_url = models.CharField(max_length=200,
                                    default="../../static/readersclub/harry-potter-clipart-black-and-white-638462-2576998.jpg")
 
