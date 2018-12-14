@@ -81,18 +81,24 @@
                 {% if perms.readersclub.add_review %}
                 <div id="result">
                 <form METHOD="get" action="{% url 'readers_club_review_vote' pk=book.pk %}#result">
+                    <span id="helpful" style="padding-right: 10px;
+                    font-size: small;">Helpful: {{ review.vote }}</span>
+
                     <input type="hidden" value="{{ review.review_id }}" name="rid">
 
-                    <button type="Submit" id="vote" value="vote" name="vote" onclick="changevote()"
+                    <button type="Submit" id="vote_{{ review.review_id }}" value="vote" name="vote"
+                            onclick="changevote(this)"
                             style=" margin-top: 10px; padding-bottom: 10px; padding-left: 5px;
-                            padding-right: 5px; border: none">
+                            padding-right: 5px; border: none;">
                         <img src="../../static/readersclub/orange-thumb-like.png" style="height: 30px; width: 30px; margin: 0">
                     </button>
 
-                    <p id="helpful" style="display: inline; padding-left: 10px; font-size: small">Helpful: {{ review.vote }}</p>
+                    <span id="fake_{{ review.review_id }}" style="visibility: hidden; color: darkgreen;
+                    font-weight: bold;">Thanks for your feedback!</span>
                 </form>
                 </div>
                 {% endif %}
+
 
             </li>
             {% empty %}
@@ -138,3 +144,42 @@
     {% endif %}
 {% endblock %}
 
+{% block scripts %}
+    <script>
+        function setCookie(name, value, days) {
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                var expires = "; expires=" + date.toGMTString();
+            }
+            else {
+                var expires = "";
+            }
+            document.cookie = name + "=" + value + expires + "; path=/";
+        }
+
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        function changevote(item){
+            item.style.visibility="hidden";
+            var Btn = item.id;
+            setCookie(Btn, true, null);
+        }
+
+        {% for review in review_list %}
+            if(getCookie("vote_{{ review.review_id }}")) {
+               document.getElementById("vote_{{ review.review_id }}").style.visibility="hidden";
+               document.getElementById("fake_{{ review.review_id }}").style.visibility="visible";
+            }
+        {% endfor %}
+    </script>
+{% endblock %}

@@ -183,7 +183,9 @@ def vote(request, pk):
     review = get_object_or_404(Review, pk=request.GET.get('rid'))
     if request.GET.get('vote') == 'vote':
         review.vote += 1
+        request.user.first_name = 'voted'
         review.save()
+        request.user.save()
     return redirect('readersclub_book_detail_urlpattern', pk=pk)
 
 
@@ -214,8 +216,9 @@ class ReviewDelete(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
     model = Review
 
     def get_success_url(self):
-        review_list = self.kwargs['pk']
-        return reverse_lazy('readersclub_review_list_urlpattern', kwargs={'pk': review_list})
+        review = get_object_or_404(Review, pk=self.kwargs['pk'])
+        book = review.book.book_id
+        return reverse_lazy('readersclub_review_list_urlpattern', kwargs={'pk': book})
 
 
 # class ReviewCreate(CreateView):

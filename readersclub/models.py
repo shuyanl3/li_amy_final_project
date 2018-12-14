@@ -38,6 +38,9 @@ class Author(models.Model):
                        kwargs={'pk': self.pk}
                        )
 
+    class Meta:
+        ordering = ['last_name']
+
 
 class Book(models.Model):
     book_id = models.AutoField(primary_key=True)
@@ -104,8 +107,6 @@ class Review(models.Model):
 
     class Meta:
         ordering = ['review_id']
-
-
 
 
 
