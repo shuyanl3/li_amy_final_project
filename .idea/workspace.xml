@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b71c066-63a2-4775-ae44-84d6725d840a" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/readersclub/migrations/0010_auto_20181214_2051.py" />
-      <change beforePath="$PROJECT_DIR$/.idea/li_amy_final_project.iml" afterPath="$PROJECT_DIR$/.idea/li_amy_final_project.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change beforePath="$PROJECT_DIR$/readersclub/forms.py" afterPath="$PROJECT_DIR$/readersclub/forms.py" />
-      <change beforePath="$PROJECT_DIR$/readersclub/models.py" afterPath="$PROJECT_DIR$/readersclub/models.py" />
-      <change beforePath="$PROJECT_DIR$/readersclub/views.py" afterPath="$PROJECT_DIR$/readersclub/views.py" />
+      <change beforePath="$PROJECT_DIR$/readersclub/templates/readersclub/author_detail.html" afterPath="$PROJECT_DIR$/readersclub/templates/readersclub/author_detail.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,27 +22,37 @@
         <entry file="file://$PROJECT_DIR$/readersclub/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
-              <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+              <caret line="18" column="22" lean-forward="false" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/readersclub/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="35" column="88" lean-forward="false" selection-start-line="35" selection-start-column="88" selection-end-line="35" selection-end-column="88" />
+            <state relative-caret-position="525">
+              <caret line="36" column="98" lean-forward="false" selection-start-line="36" selection-start-column="98" selection-end-line="36" selection-end-column="98" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="author_detail.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="author_form_update.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/readersclub/templates/readersclub/author_form_update.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="author_detail.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/readersclub/templates/readersclub/author_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="28" column="36" lean-forward="false" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+            <state relative-caret-position="165">
+              <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -57,7 +62,7 @@
         <entry file="file://$PROJECT_DIR$/readersclub/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="3795">
-              <caret line="253" column="20" lean-forward="true" selection-start-line="253" selection-start-column="20" selection-end-line="253" selection-end-column="20" />
+              <caret line="253" column="20" lean-forward="false" selection-start-line="253" selection-start-column="20" selection-end-line="253" selection-end-column="20" />
               <folding>
                 <element signature="e#0#44#0" expanded="true" />
               </folding>
@@ -111,7 +116,6 @@
         <option value="$PROJECT_DIR$/readersclub/static/readersclub/skeleton.css" />
         <option value="$PROJECT_DIR$/readersclub/templates/readersclub/book_list.html" />
         <option value="$PROJECT_DIR$/readersclub/templates/readersclub/author_list.html" />
-        <option value="$PROJECT_DIR$/readersclub/templates/readersclub/author_detail.html" />
         <option value="$PROJECT_DIR$/readersclub/templates/readersclub/review_list.html" />
         <option value="$PROJECT_DIR$/readersclub/templates/readersclub/about.html" />
         <option value="$PROJECT_DIR$/readersclub/templates/readersclub/book_detail.html" />
@@ -120,6 +124,7 @@
         <option value="$PROJECT_DIR$/readersclub/models.py" />
         <option value="$PROJECT_DIR$/readersclub/views.py" />
         <option value="$PROJECT_DIR$/readersclub/forms.py" />
+        <option value="$PROJECT_DIR$/readersclub/templates/readersclub/author_detail.html" />
       </list>
     </option>
   </component>
@@ -343,7 +348,14 @@
       <option name="project" value="LOCAL" />
       <updated>1544754412567</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="revise form">
+      <created>1544826385101</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1544826385101</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -388,7 +400,8 @@
     <MESSAGE value="revise frontend" />
     <MESSAGE value="add vote for review function" />
     <MESSAGE value="add revised vote function" />
-    <option name="LAST_COMMIT_MESSAGE" value="add revised vote function" />
+    <MESSAGE value="revise form" />
+    <option name="LAST_COMMIT_MESSAGE" value="revise form" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -450,13 +463,6 @@
     <entry file="file://$PROJECT_DIR$/readersclub/migrations/0004_auto_20181127_0603.py" />
     <entry file="file://$PROJECT_DIR$/readersclub/migrations/0003_auto_20181127_0559.py" />
     <entry file="file://$PROJECT_DIR$/readersclub/templates/readersclub/book_form_create.html" />
-    <entry file="file://$PROJECT_DIR$/readersclub/templates/readersclub/author_form_update.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/readersclub/templates/readersclub/book_form_update.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -664,7 +670,7 @@
     <entry file="file://$PROJECT_DIR$/readersclub/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3795">
-          <caret line="253" column="20" lean-forward="true" selection-start-line="253" selection-start-column="20" selection-end-line="253" selection-end-column="20" />
+          <caret line="253" column="20" lean-forward="false" selection-start-line="253" selection-start-column="20" selection-end-line="253" selection-end-column="20" />
           <folding>
             <element signature="e#0#44#0" expanded="true" />
           </folding>
@@ -700,16 +706,8 @@
         <state relative-caret-position="99">
           <caret line="50" column="11" lean-forward="true" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readersclub/templates/readersclub/author_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="28" column="36" lean-forward="false" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -724,15 +722,31 @@
     <entry file="file://$PROJECT_DIR$/readersclub/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
-          <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+          <caret line="18" column="22" lean-forward="false" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/readersclub/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="35" column="88" lean-forward="false" selection-start-line="35" selection-start-column="88" selection-end-line="35" selection-end-column="88" />
+        <state relative-caret-position="525">
+          <caret line="36" column="98" lean-forward="false" selection-start-line="36" selection-start-column="98" selection-end-line="36" selection-end-column="98" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readersclub/templates/readersclub/author_form_update.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readersclub/templates/readersclub/author_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
           <folding />
         </state>
       </provider>

@@ -34,7 +34,7 @@ class AuthorForm(forms.ModelForm):
         fields = '__all__'
 
     introduction = forms.CharField(widget=forms.Textarea(attrs={'cols': 50, 'rows': 30}))
-    awards = forms.CharField(widget=forms.Textarea(attrs={'cols': 40, 'rows': 20}), blank=True)
+    awards = forms.CharField(widget=forms.Textarea(attrs={'cols': 40, 'rows': 20}), required=False)
 
     def clean_last_name(self):
         return self.cleaned_data['last_name'].strip()
